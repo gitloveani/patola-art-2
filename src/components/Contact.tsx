@@ -1,5 +1,5 @@
 
-import { Instagram, Pinterest, Phone } from "lucide-react";
+import { Instagram, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -36,7 +36,10 @@ const Contact = () => {
 
             <div className="bg-background rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-16 h-16 bg-patola-burgundy rounded-full flex items-center justify-center mx-auto mb-6">
-                <Pinterest className="w-8 h-8 text-patola-cream" />
+                <svg className="w-8 h-8 text-patola-cream" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16c-.169 1.858-.896 3.462-1.555 4.114-.659.653-2.257 1.386-4.114 1.555-1.858.169-7.747.169-9.605 0-1.858-.169-3.462-.896-4.114-1.555-.653-.659-1.386-2.257-1.555-4.114-.169-1.858-.169-7.747 0-9.605.169-1.858.896-3.462 1.555-4.114.659-.653 2.257-1.386 4.114-1.555 1.858-.169 7.747-.169 9.605 0 1.858.169 3.462.896 4.114 1.555.653.659 1.386 2.257 1.555 4.114.169 1.858.169 7.747 0 9.605z"/>
+                  <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162S8.597 18.162 12 18.162s6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 1.621c2.508 0 4.541 2.033 4.541 4.541S14.508 16.541 12 16.541 7.459 14.508 7.459 12 9.492 7.459 12 7.459z"/>
+                </svg>
               </div>
               <h3 className="font-playfair text-xl font-semibold text-patola-dark mb-4">
                 Pinterest
