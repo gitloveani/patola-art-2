@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import galleryDataFromFile from '@/gallery-manifest.json';
 
 interface GalleryItem {
   id: string;
@@ -14,63 +15,28 @@ interface GalleryProps {
   filter: string;
 }
 
-// Mock data - replace with actual images from folders
-const galleryItems: GalleryItem[] = [
-  {
-    id: "1",
-    category: "single-ekat",
-    price: "₹15,000",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800",
-    title: "Traditional Single Ekat Patola"
-  },
-  {
-    id: "2",
-    category: "semi-ekat",
-    price: "₹25,000",
-    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=800",
-    title: "Elegant Semi Ekat Design"
-  },
-  {
-    id: "3",
-    category: "double-ekat",
-    price: "₹45,000",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800",
-    title: "Premium Double Ekat Masterpiece"
-  },
-  {
-    id: "4",
-    category: "single-ekat",
-    price: "₹18,000",
-    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=800",
-    title: "Classic Single Ekat Pattern"
-  },
-  {
-    id: "5",
-    category: "more",
-    price: "₹12,000",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=800",
-    title: "Special Collection Item"
-  },
-  {
-    id: "6",
-    category: "double-ekat",
-    price: "₹55,000",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?q=80&w=800",
-    title: "Luxurious Double Ekat Creation"
-  }
-];
-
 const Gallery = ({ filter }: GalleryProps) => {
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(galleryDataFromFile);
+  // const [isLoading, setIsLoading] = useState(true); // Removed
+  // const [error, setError] = useState<string | null>(null); // Removed
   const [filteredItems, setFilteredItems] = useState<GalleryItem[]>([]);
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
+  // useEffect for fetching data removed
+
   useEffect(() => {
+    // if (galleryItems.length === 0) return; // Data is now loaded synchronously, this check might be redundant or behave differently
+    // If galleryDataFromFile could be empty initially, this check might still be useful,
+    // but typically imported JSON is available immediately.
+    // For robustness, let's keep it, or ensure galleryDataFromFile is never an empty array if it implies "not loaded yet".
+    // Assuming galleryDataFromFile is the actual array of items or an empty array if the manifest was empty.
+
     if (filter === "all" || filter === "featured") {
-      setFilteredItems(galleryItems.slice(0, 6));
+      setFilteredItems(galleryItems.slice(0, 6)); // Or however 'featured' is determined
     } else {
       setFilteredItems(galleryItems.filter(item => item.category === filter));
     }
-  }, [filter]);
+  }, [filter, galleryItems]);
 
   const getTitle = () => {
     switch (filter) {
@@ -86,6 +52,8 @@ const Gallery = ({ filter }: GalleryProps) => {
         return "Featured Collection";
     }
   };
+
+  // isLoading and error JSX removed
 
   return (
     <section className="py-20 min-h-screen">

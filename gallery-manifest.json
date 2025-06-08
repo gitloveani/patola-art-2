@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "category": "single-ekat",
+    "price": "₹1,000",
+    "image": "/patola-art-2/single-ekat/1000.jpg",
+    "title": "single ekat Patola 1"
+  },
+  {
+    "id": "2",
+    "category": "double-ekat",
+    "price": "₹2,000",
+    "image": "/patola-art-2/double-ekat/2000.png",
+    "title": "double ekat Patola 2"
+  },
+  {
+    "id": "3",
+    "category": "more",
+    "price": "₹3,000",
+    "image": "/patola-art-2/more/3000.webp",
+    "title": "more Patola 3"
+  }
+]
