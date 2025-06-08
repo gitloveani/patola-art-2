@@ -8,7 +8,7 @@ import path from "path"; // This import is already there
 
 export default defineConfig(({ mode }) => ({
   // !!! ADD THIS LINE !!!
-  base: '/patola-art-2/', // Your repository name goes here, enclosed in slashes
+  base: '/', // Your repository name goes here, enclosed in slashes
 
   server: {
     host: "::",

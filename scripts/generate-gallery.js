@@ -3,7 +3,7 @@ import path from 'path';
 
 const publicDir = path.join(process.cwd(), 'public'); // Still needed for reading images
 const outputManifestPath = path.join(process.cwd(), 'src', 'gallery-manifest.json');
-const imageBasePath = '/patola-art-2/'; // Vite base path
+const imageBasePath = '/'; // Vite base path
 
 const categories = ['single-ekat', 'semi-ekat', 'double-ekat', 'more'];
 const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
